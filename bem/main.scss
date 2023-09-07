@@ -1,0 +1,34 @@
+
+@use 'reset';
+@use 'variaveis';
+@mixin elementoForm() {
+	width: 100%;
+}
+.produtos {
+    max-width: 640px;
+    @include elementoForm();
+    margin: 56px auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 1%;
+    &__produto{
+        &--imagem { 
+            @include elementoForm();
+        }
+        &--nome { 
+            font-size: 1.2em;
+            margin: 8px 0;
+        }
+        &--descricao { 
+            color:variaveis.$corDescricao;
+        }
+
+        &--em-destaque{
+            border: 2px solid variaveis.$corDaBorda;
+            padding: 8px;
+            background-color:variaveis.$corDeFundoDestaque;
+        }
+    }
+}
+
+
